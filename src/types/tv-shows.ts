@@ -1,6 +1,13 @@
-export type Root = Root2[];
+export interface SearchedTvShow {
+  score: number;
+  show: Show;
+}
 
-export interface Root2 {
+export interface AggregateTvShow {
+  genre: string;
+  shows: Show[];
+}
+export interface Show {
   id: number;
   url: string;
   name: string;
@@ -32,7 +39,7 @@ export interface Schedule {
 }
 
 export interface Rating {
-  average?: number;
+  average: number;
 }
 
 export interface Network {
