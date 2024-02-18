@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Shows</h1>
+    <h1 data-test="show">Shows</h1>
     <div v-for="({ shows, genre }, i) in showsByGenre" :key="i">
       <h3>{{ genre }}</h3>
 
