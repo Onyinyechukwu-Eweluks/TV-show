@@ -12,7 +12,9 @@
           </p>
         </div>
       </div>
+      <hr>
     </div>
+    <hr>
   </div>
 </template>
  
@@ -46,11 +48,25 @@ export default defineComponent({
 <style scoped>
 .img {
   width: 30%;
+  max-width: 200px;
 }
 
 .show-details {
   display: flex;
   gap: 20px;
   flex-direction: row;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .show-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .img {
+    width: auto;
+  }
+
 }
 </style>
