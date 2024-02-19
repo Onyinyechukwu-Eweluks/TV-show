@@ -24,8 +24,8 @@ export interface Show {
   rating: Rating;
   weight: number;
   network?: Network;
-  webChannel?: WebChannel;
-  dvdCountry?: DvdCountry;
+  webChannel?: null;
+  dvdCountry?: null;
   externals: Externals;
   image: Image;
   summary: string;

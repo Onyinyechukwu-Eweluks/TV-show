@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import DashboardPage from "../views/DashboardPage.vue";
 import ShowDetailsPage from "../views/ShowDetailsPage.vue";
 
-const routes = [
+export const routes = [
   {
     path: "/",
     name: "DashboardPage",
