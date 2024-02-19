@@ -12,8 +12,10 @@ describe("Dashboard page", () => {
   it("changes shows displayed onclick", async () => {
     const wrapper = shallowMount(DashboardComp);
     const inputEl = wrapper.find("input");
-    const buttonEl = wrapper.find("button");
     inputEl.element.value = "fbi";
+    inputEl.trigger("inputEl");
+    const buttonEl = wrapper.find("button");
     await buttonEl.trigger("click");
+    expect(wrapper.findComponent(TvShowsList).exists()).toBe(true);
   });
 });
