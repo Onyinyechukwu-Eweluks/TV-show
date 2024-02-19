@@ -6,4 +6,7 @@ import "./assets/css/global.css";
 import "bootstrap/dist/css/bootstrap.css";
 import("bootstrap");
 
-createApp(App).use(router).mount("#app");
+// createApp(App).use(router).mount("#app");
+const app = createApp(App);
+app.use(router);
+app.mount("#app");
