@@ -1,4 +1,4 @@
-import { VueWrapper, shallowMount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import DashboardComp from "@/components/tv-show/DashbordComp.vue";
 import TvShowsList from "@/components/tv-show/TvShowsList.vue";
 

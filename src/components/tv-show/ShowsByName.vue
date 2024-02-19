@@ -21,9 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-// import { searchUrl } from '../../composables/apiData'
 import { SearchedTvShow } from '@/types/tv-shows';
-// import axios from 'axios';
 
 export default defineComponent({
   name: "ShowsByName",
