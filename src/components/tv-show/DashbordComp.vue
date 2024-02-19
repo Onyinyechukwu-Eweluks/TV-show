@@ -10,7 +10,7 @@
         aria-describedby="button-addon2"
         v-model.lazy="searchInput"
       />
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="getSearchResult">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="getSearchResult" data-test="btn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

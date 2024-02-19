@@ -46,7 +46,10 @@ export default defineComponent({
     async getTvShowList() {
       try {
         const result = await axios.get(showUrl)
-        const res = (await result.data) as Show[]
+        const res = await result.data as Show[]
+        if (!res && res === undefined) {
+          return "No data found"
+        }
         this.showData = res
         let records = this.getShows(this.showData) as AggregateTvShow[]
         this.showsByGenre = records
