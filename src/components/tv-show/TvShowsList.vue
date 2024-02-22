@@ -10,7 +10,7 @@
             :to="{ name: 'ShowDetailsPage', params: { id: show.id } }"
           >
             <div class="card">
-              <img :src="(show.image.medium)" class="card-text" />
+              <img :src="(show.image.medium)" class="card-text" loading="lazy" />
               <div class="card-body">
                 <h2 class="card-title">
                   {{ show.name }}
@@ -27,9 +27,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import axios from "axios"
 import { Show, AggregateTvShow } from '@/types/tv-shows'
-import { showUrl } from '../../utils/apiData'
+import { getAxios } from '../../utils/apiData'
 
 export default defineComponent({
   data() {
@@ -45,8 +44,8 @@ export default defineComponent({
   methods: {
     async getTvShowList() {
       try {
-        const result = await axios.get(showUrl)
-        const res = await result.data as Show[]
+        // const result = await axios.get(showUrl)
+        const res = await getAxios() as Show[]
         if (!res && res === undefined) {
           return "No data found"
         }

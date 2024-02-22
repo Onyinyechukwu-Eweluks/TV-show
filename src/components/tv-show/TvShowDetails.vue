@@ -2,7 +2,7 @@
   <div class="container mt-3">
     <h1>Show Details</h1>
     <div class="show-details">
-      <img :src="(showObj.image?.original)" class="img" />
+      <img :src="(showObj.image?.original)" class="img" loading="lazy" />
       <div class="show-details-text">
         <h2 class="show-details-title">{{ showObj.name }}</h2>
         <p class="show-details-paragraph" v-html="showObj.summary"></p>

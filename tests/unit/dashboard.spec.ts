@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import DashboardComp from "@/components/tv-show/DashbordComp.vue";
+import DashboardComp from "@/components/tv-show/SearchComp.vue";
 import TvShowsList from "@/components/tv-show/TvShowsList.vue";
 
 describe("Dashboard page", () => {
