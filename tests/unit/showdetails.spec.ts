@@ -5,7 +5,7 @@ import { routes } from "@/router";
 import { ComponentPublicInstance } from "vue";
 import { Show } from "@/types/tv-shows";
 
-const mockAxios = jest.fn(() => Promise.resolve({ data: {} as Show }));
+const mockAxios = jest.fn(() => Promise.resolve(mockGetList));
 jest.mock("axios", () => ({
   get: () => mockAxios(),
 }));
@@ -69,6 +69,8 @@ const mockGetList = {
   },
 };
 
+// jest.spyOn(axios, "get").mockResolvedValue(mockGetList);
+
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
@@ -97,9 +99,22 @@ describe("TvShowList.vue", () => {
   });
   afterEach(() => jest.clearAllMocks());
 
-  it("calls api data", async () => {
-    await wrapper.trigger("load");
-    mockAxios.mockResolvedValue(mockGetList);
+  // it("calls api data", async () => {
+  //   await wrapper.trigger("load");
+  //   expect(axios.get).toHaveBeenCalledTimes(1);
+  //   expect(axios.get).toHaveBeenCalledWith(showUrl + "/1");
+
+  //   await flushPromises();
+
+  //   const show = wrapper.find("h2");
+  //   expect(show.text()).toContain("Under the Dome");
+  // });
+
+  it("get api data", async () => {
+    const list = await wrapper.vm.$data;
+    const show = wrapper.find("h2");
+
     expect(mockAxios).toHaveBeenCalledTimes(1);
+    expect(show.text()).toContain("Under the Dome");
   });
 });

@@ -1,17 +1,18 @@
 <template>
   <div>
-    <DashboardComp />
+    <TvShowsList />
   </div>
 </template>
 
 <script lang="ts">
+import TvShowsList from '@/components/tv-show/TvShowsList.vue'
 import { defineComponent } from 'vue'
-import DashboardComp from '../components/tv-show/DashbordComp.vue'
 
 export default defineComponent({
   name: 'DashboardPage',
   components: {
-    DashboardComp,
+    TvShowsList
+
   },
   setup() {
 

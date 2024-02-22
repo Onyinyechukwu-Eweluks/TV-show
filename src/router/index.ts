@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import DashboardPage from "../views/DashboardPage.vue";
 import ShowDetailsPage from "../views/ShowDetailsPage.vue";
+import SearchPage from "../views/SearchPage.vue";
 
 export const routes = [
   {
@@ -13,6 +14,11 @@ export const routes = [
     path: "/:id",
     name: "ShowDetailsPage",
     component: ShowDetailsPage,
+  },
+  {
+    path: "/search/:tvShow",
+    name: "SearchPage",
+    component: SearchPage,
   },
 ];
 

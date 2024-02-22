@@ -22,13 +22,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { SearchedTvShow } from '@/types/tv-shows';
+import { getSearchData } from '../../utils/apiData'
 
 export default defineComponent({
   name: "ShowsByName",
   components: {},
   props: {
     showName: {
-      type: Array,
+      type: String,
     }
   },
   data() {
@@ -36,10 +37,20 @@ export default defineComponent({
       searchData: [] as SearchedTvShow[],
     }
   },
-  mounted() {
-    this.searchData = this.showName as SearchedTvShow[]
+  async mounted() {
+    // this.searchData = this.showName as SearchedTvShow[]
+    await this.getSearchResult()
   },
-  methods: {}
+  methods: {
+    async getSearchResult() {
+      try {
+        const data = await getSearchData(this.showName as string) as SearchedTvShow[]
+        this.searchData = data
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
 })
 </script>
 
